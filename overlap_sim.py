@@ -35,23 +35,23 @@ def overlap_sim(n=100000,k=317,p=0.05,beta=0.1,project_iter=10):
 	b.add_area("D",n,k,0.0) # final project test area
 	b.project({"stimA":["A"],"stimB":["B"]},{})
 	# Create assemblies A and B to stability
-	for i in xrange(9):
+	for i in range(0, 9):
 		b.project({"stimA":["A"],"stimB":["B"]},
 			{"A":["A"],"B":["B"]})
 	b.project({"stimA":["A"]},{"A":["A","C"]})
 	# Project A->C
-	for i in xrange(9):
+	for i in range(0, 9):
 		b.project({"stimA":["A"]},
 			{"A":["A","C"],"C":["C"]})
 	# Project B->C
 	b.project({"stimB":["B"]},{"B":["B","C"]})
-	for i in xrange(9):
+	for i in range(0, 9):
 		b.project({"stimB":["B"]},
 			{"B":["B","C"],"C":["C"]})
 	# Project both A,B to C
 	b.project({"stimA":["A"],"stimB":["B"]},
 		{"A":["A","C"],"B":["B","C"]})
-	for i in xrange(project_iter):
+	for i in range(0, project_iter):
 		b.project({"stimA":["A"],"stimB":["B"]},
 				{"A":["A","C"],"B":["B","C"],"C":["C"]})
 	# Project just B
@@ -81,27 +81,27 @@ def overlap_grand_sim(n=100000,k=317,p=0.01,beta=0.05,min_iter=10,max_iter=30):
 
 	b.project({"stimA":["A"],"stimB":["B"]},{})
 	# Create assemblies A and B to stability
-	for i in xrange(10):
+	for i in range(0, 10):
 		b.project({"stimA":["A"],"stimB":["B"]},
 			{"A":["A"],"B":["B"]})
 	b.project({"stimA":["A"]},{"A":["A","C"]})
 	# Project A->C
-	for i in xrange(10):
+	for i in range(0, 10):
 		b.project({"stimA":["A"]},
 			{"A":["A","C"],"C":["C"]})
 	# Project B->C
 	b.project({"stimB":["B"]},{"B":["B","C"]})
-	for i in xrange(10):
+	for i in range(0, 10):
 		b.project({"stimB":["B"]},
 			{"B":["B","C"],"C":["C"]})
 	# Project both A,B to C
 	b.project({"stimA":["A"],"stimB":["B"]},
 		{"A":["A","C"],"B":["B","C"]})
-	for i in xrange(min_iter-2):
+	for i in range(0, min_iter-2):
 		b.project({"stimA":["A"],"stimB":["B"]},
 				{"A":["A","C"],"B":["B","C"],"C":["C"]})
 	results = {}
-	for i in xrange(min_iter,max_iter+1):
+	for i in range(0, min_iter,max_iter+1):
 		b.project({"stimA":["A"],"stimB":["B"]},
 				{"A":["A","C"],"B":["B","C"],"C":["C"]})
 		b_copy1 = copy.deepcopy(b)
@@ -124,6 +124,120 @@ def overlap_grand_sim(n=100000,k=317,p=0.01,beta=0.05,min_iter=10,max_iter=30):
 		proj_intersection = bu.overlap(D_saved_winners[0], D_saved_winners[1])
 		proj_overlap = float(proj_intersection)/float(k)
 
-		print "t=" + str(i) + " : " + str(assembly_overlap) + " -> " + str(proj_overlap) + "\n"
+		print("t=" + str(i) + " : " + str(assembly_overlap) + " -> " + str(proj_overlap) + "\n")
 		results[assembly_overlap] = proj_overlap
 	return results
+
+def overlap_sim_multi(n=100000,k=317,p=0.05,beta=0.1,project_iter=10):
+	b = brain.Brain(p,save_winners=True)
+	b.add_stimulus("stimA",k)
+	b.add_area("A",n,k,beta)
+	b.add_stimulus("stimB",k)
+	b.add_area("B",n,k,beta)
+	b.add_stimulus("stimC",k)
+	b.add_area("C",n,k,beta)
+	b.add_area("D",n,k,beta)
+	b.add_area("E",n,k,0.0) # final project test area
+	b.project({"stimA":["A"],"stimB":["B"],"stimC":["C"]},{}) #edit project function
+	# Create assemblies A and B and C to stability
+	for i in range(0, 9):
+		b.project({"stimA":["A"],"stimB":["B"], "stimC":["C"]},
+			{"A":["A"],"B":["B"],"C":["C"]})
+
+	b.project({"stimA":["A"]},{"A":["A","D"]})
+	# Project A->D
+	for i in range(0, 9):
+		b.project({"stimA":["A"]},
+			{"A":["A","D"],"D":["D"]})
+	# Project B->D
+	b.project({"stimB":["B"]},{"B":["B","D"]})
+	for i in range(0, 9):
+		b.project({"stimB":["B"]},
+			{"B":["B","D"],"D":["D"]})
+	# Project C->D
+	b.project({"stim":["C"]},{"C":["C","D"]})
+	for i in range(0, 9):
+		b.project({"stimC":["C"]},
+			{"B":["B","D"],"D":["D"]})
+	# Project both A,B,C to D
+	b.project({"stimA":["A"],"stimB":["B"], "stimC":["C"]},
+		{"A":["A","D"],"B":["B","D"], "C":["C","D"]})
+	for i in range(0, project_iter):
+		b.project({"stimA":["A"],"stimB":["B"],"stimC":["C"]},
+				{"A":["A","D"],"B":["B","D"],"C":["C","D"],"D":["D"]})
+
+	# last part needs work 
+
+	# Project just B
+	b.project({"stimB":["B"]},{"B":["B","D"]})
+	# compute overlap 
+	intersection = bu.overlap(b.areas["D"].saved_winners[-1],b.areas["D"].saved_winners[9])
+	assembly_overlap = float(intersection)/float(k)
+
+	b.project({},{"D":["E"]})
+	# Project just A
+	b.project({"stimA":["A"]},{"A":["A","D"]})
+	b.project({},{"D":["E"]})
+	E_saved_winners = b.areas["D"].saved_winners
+	proj_intersection = bu.overlap(E_saved_winners[0], E_saved_winners[1])
+	proj_overlap = float(proj_intersection)/float(k)
+
+	return assembly_overlap, proj_overlap
+
+def overlap_sim_multiple_areas(n=100000,k=317,p=0.05,beta=0.1,project_iter=10,areas=2):
+	b = brain.Brain(p,save_winners=True)
+	stim_dict = {} #stimuluation 
+	area_dict = {} #areas
+	#initiailizing stimulus and areas
+	for i in range(1, areas+1):	
+		area_name = str(chr(64+i))
+		stim_name = "stim" + area_name 
+		b.add_stimulus(stim_name,k)	
+		b.add_area(area_name,n,k,beta)
+		stim_dict[stim_name] = [area_name] 
+		area_dict[area_name] = [area_name]
+
+	target_area = str(chr(64+(areas+1)))
+	b.add_area(target_area,n,k,beta)
+	target_area_2 = str(chr(64+(areas+2)))
+	b.add_area(target_area_2,n,k,0.0)
+	b.project(stim_dict,{})
+	# Create assemblies in each area to stability
+	for i in range(0,9):
+		b.project(stim_dict, area_dict)
+
+	# Create assemblies A and B to stability
+	for i in range(0, 9):
+		b.project({"stimA":["A"],"stimB":["B"]},
+			{"A":["A"],"B":["B"]})
+	b.project({"stimA":["A"]},{"A":["A","C"]})
+	# Project A->C
+	for i in range(0, 9):
+		b.project({"stimA":["A"]},
+			{"A":["A","C"],"C":["C"]})
+	# Project B->C
+	b.project({"stimB":["B"]},{"B":["B","C"]})
+	for i in range(0, 9):
+		b.project({"stimB":["B"]},
+			{"B":["B","C"],"C":["C"]})
+	# Project both A,B to C
+	b.project({"stimA":["A"],"stimB":["B"]},
+		{"A":["A","C"],"B":["B","C"]})
+	for i in range(0, project_iter):
+		b.project({"stimA":["A"],"stimB":["B"]},
+				{"A":["A","C"],"B":["B","C"],"C":["C"]})
+	# Project just B
+	b.project({"stimB":["B"]},{"B":["B","C"]})
+	# compute overlap
+	intersection = bu.overlap(b.areas["C"].saved_winners[-1],b.areas["C"].saved_winners[9])
+	assembly_overlap = float(intersection)/float(k)
+
+	b.project({},{"C":["D"]})
+	# Project just A
+	b.project({"stimA":["A"]},{"A":["A","C"]})
+	b.project({},{"C":["D"]})
+	D_saved_winners = b.areas["D"].saved_winners
+	proj_intersection = bu.overlap(D_saved_winners[0], D_saved_winners[1])
+	proj_overlap = float(proj_intersection)/float(k)
+
+	return assembly_overlap, proj_overlap	

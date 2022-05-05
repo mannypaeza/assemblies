@@ -13,15 +13,15 @@ def fixed_assembly_test(n=100000,k=317,p=0.01,beta=0.01):
 	b.add_stimulus("stim",k)
 	b.add_area("A",n,k,beta)
 	b.project({"stim":["A"]},{})
-	for i in xrange(3):
+	for i in range(0, 3):
 		b.project({"stim":["A"]},{"A":["A"]})
 		print(b.areas["A"].w)
 	b.areas["A"].fix_assembly()
-	for i in xrange(5):
+	for i in range(0, 5):
 		b.project({"stim":["A"]},{"A":["A"]})
 		print(b.areas["A"].w)
 	b.areas["A"].unfix_assembly()
-	for i in xrange(5):
+	for i in range(0, 5):
 		b.project({"stim":["A"]},{"A":["A"]})
 		print(b.areas["A"].w)
 

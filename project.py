@@ -20,11 +20,11 @@ support = set()
 support_size_at_t = []
 new_winners_at_t = []
 # for each time step
-for t in xrange(T):
+for t in range(0, T):
 	# calculate inputs into each of n neurons
-	inputs = [stimulus_inputs[i] for i in xrange(n)]
+	inputs = [stimulus_inputs[i] for i in range(0, n)]
 	for i in winners:
-		for j in xrange(n):
+		for j in range(0, n):
 			inputs[j] += A_connectome[i][j]
 	# identify top k winners 	
 	new_winners = heapq.nlargest(k, range(len(inputs)), inputs.__getitem__)
