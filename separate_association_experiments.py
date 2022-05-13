@@ -15,8 +15,8 @@ n=100000
 k=317
 p=0.05
 project_iter=10 
-beta_list = [0.3,0.2,0.1,0.075,0.05,0.03,0.01,0.007,0.005] 
-n_areas_list = [2,3,4,5,6,7,8] # number of areas not including the target area (i.e., the area of association)
+beta_list = [0.4,0.3,0.2,0.1,0.075,0.05]
+n_areas_list = [4] # number of areas not including the target area (i.e., the area of association)
 n_firings_in_assoc_list = [0,1,3,5]
 n_runs_per_experiment = 1
 
@@ -105,7 +105,11 @@ def firing_neurons_multiple_areas_associated_separate(n,k,p,beta,project_iter,n_
         overlap_with_assembly_of_interest = bu.overlap(winners, winners_from_interesting_area)
         i += 1
         total_overlap[i] = float(overlap_with_assembly_of_interest)/float(k)
-        if abs( (total_overlap[i-1] - total_overlap[i]) / float(total_overlap[i-1]) ) <= 0.0005:
+        if (float(total_overlap[i-1])>0):
+
+            if abs( (total_overlap[i-1] - total_overlap[i]) / float(total_overlap[i-1]) ) <= 0.0005:
+                break
+        if (i>10):
             break
     
     df['overlap_with_ass_interest_after_1_firing'] += total_overlap[1]
@@ -117,42 +121,44 @@ def firing_neurons_multiple_areas_associated_separate(n,k,p,beta,project_iter,n_
     return df
 
 if __name__ == "__main__":
-    df = pd.DataFrame(columns=['beta', '#areas', '#firing_areas', '#firings_in_assoc',
-                                'avg_pairwise_assoc_overlap', 'total_assoc_overlap', 
-                                'overlap_with_ass_interest_after_1_firing', '#firings_till_convergence', 
-                                'overlap_with_ass_interest_upon_convergence','max_overlap_with_ass_interest'])
-    df.to_csv (r'separate.csv', index = False, header=True)
-    for beta in beta_list:
-        for n_areas in n_areas_list:
-            for n_firing_areas in range(1, n_areas):
-                for n_firings_in_assoc in n_firings_in_assoc_list:
-                    df2 = {}
-                    df2['#areas'] = n_areas
-                    df2['beta'] = beta
-                    df2['#firing_areas'] = n_firing_areas
-                    df2['#firings_in_assoc'] = n_firings_in_assoc
-                    df2['avg_pairwise_assoc_overlap'] = 0
-                    df2['total_assoc_overlap'] = 0
-                    df2['overlap_with_ass_interest_after_1_firing'] = 0
-                    df2['#firings_till_convergence'] = 0
-                    df2['overlap_with_ass_interest_upon_convergence'] = 0
-                    df2['max_overlap_with_ass_interest'] = 0
+    print('hello')
+    for i in range(0,10):
+        df = pd.DataFrame(columns=['beta', '#areas', '#firing_areas', '#firings_in_assoc',
+                                    'avg_pairwise_assoc_overlap', 'total_assoc_overlap', 
+                                    'overlap_with_ass_interest_after_1_firing', '#firings_till_convergence', 
+                                    'overlap_with_ass_interest_upon_convergence','max_overlap_with_ass_interest'])
+        df.to_csv (r'separate.csv', index = False, header=True)
+        for beta in beta_list:
+            for n_areas in n_areas_list:
+                for n_firing_areas in range(1, n_areas):
+                    for n_firings_in_assoc in n_firings_in_assoc_list:
+                        df2 = {}
+                        df2['#areas'] = n_areas
+                        df2['beta'] = beta
+                        df2['#firing_areas'] = n_firing_areas
+                        df2['#firings_in_assoc'] = n_firings_in_assoc
+                        df2['avg_pairwise_assoc_overlap'] = 0
+                        df2['total_assoc_overlap'] = 0
+                        df2['overlap_with_ass_interest_after_1_firing'] = 0
+                        df2['#firings_till_convergence'] = 0
+                        df2['overlap_with_ass_interest_upon_convergence'] = 0
+                        df2['max_overlap_with_ass_interest'] = 0
 
-                    for i in range(n_runs_per_experiment):
-                        df2 = firing_neurons_multiple_areas_associated_separate(n,k,p,beta,project_iter,n_areas,n_firing_areas,n_firings_in_assoc,df2)
-        
-                    df2['avg_pairwise_assoc_overlap'] = float(df2['avg_pairwise_assoc_overlap'])/float(n_runs_per_experiment)
-                    df2['total_assoc_overlap'] = float(df2['total_assoc_overlap'])/float(n_runs_per_experiment)
-                    df2['overlap_with_ass_interest_after_1_firing'] = float(df2['overlap_with_ass_interest_after_1_firing'])/float(n_runs_per_experiment)
-                    df2['#firings_till_convergence'] = float(df2['#firings_till_convergence'])/float(n_runs_per_experiment)
-                    df2['overlap_with_ass_interest_upon_convergence'] = float(df2['overlap_with_ass_interest_upon_convergence'])/float(n_runs_per_experiment)
-                    df2['max_overlap_with_ass_interest'] = float(df2['max_overlap_with_ass_interest'])/float(n_runs_per_experiment)
-        
-                    df = pd.DataFrame(columns=['beta', '#areas', '#firing_areas', '#firings_in_assoc',
-                                                'avg_pairwise_assoc_overlap', 'total_assoc_overlap', 
-                                                'overlap_with_ass_interest_after_1_firing', '#firings_till_convergence', 
-                                                'overlap_with_ass_interest_upon_convergence','max_overlap_with_ass_interest'])
-                
-                    df = df.append(df2, ignore_index = True)
-                    df.to_csv (r'separate.csv', mode='a', index=False, header=False)
+                        for i in range(n_runs_per_experiment):
+                            df2 = firing_neurons_multiple_areas_associated_separate(n,k,p,beta,project_iter,n_areas,n_firing_areas,n_firings_in_assoc,df2)
+             
+                        df2['avg_pairwise_assoc_overlap'] = float(df2['avg_pairwise_assoc_overlap'])/float(n_runs_per_experiment)
+                        df2['total_assoc_overlap'] = float(df2['total_assoc_overlap'])/float(n_runs_per_experiment)
+                        df2['overlap_with_ass_interest_after_1_firing'] = float(df2['overlap_with_ass_interest_after_1_firing'])/float(n_runs_per_experiment)
+                        df2['#firings_till_convergence'] = float(df2['#firings_till_convergence'])/float(n_runs_per_experiment)
+                        df2['overlap_with_ass_interest_upon_convergence'] = float(df2['overlap_with_ass_interest_upon_convergence'])/float(n_runs_per_experiment)
+                        df2['max_overlap_with_ass_interest'] = float(df2['max_overlap_with_ass_interest'])/float(n_runs_per_experiment)
+            
+                        df = pd.DataFrame(columns=['beta', '#areas', '#firing_areas', '#firings_in_assoc',
+                                                    'avg_pairwise_assoc_overlap', 'total_assoc_overlap', 
+                                                    'overlap_with_ass_interest_after_1_firing', '#firings_till_convergence', 
+                                                    'overlap_with_ass_interest_upon_convergence','max_overlap_with_ass_interest'])
+                    
+                        df = df.append(df2, ignore_index = True)
+                        df.to_csv (r'separate_4areas2.csv', mode='a', index=False, header=False)
 
