@@ -16,6 +16,9 @@ class Stimulus:
 
 class Area:
 	def __init__(self, name, n, k, beta=0.05):
+		#n = number of neurons
+		#beta = plasticity weights
+		#k number of trials in binomial distr = number of winners
 		self.name = name
 		self.n = n
 		self.k = k
@@ -29,6 +32,7 @@ class Area:
 		# List of winners currently (after previous action). Can be 
 		# read by caller.
 		self.winners = []
+		self.winners_dict = {}
 		self.new_w = 0
 		# new winners computed DURING a projection, do not use outside of internal project function
 		self.new_winners = []
@@ -100,6 +104,7 @@ class Brain:
 			new_connectomes[key] = np.empty((0, other_area_size))
 			if key != name:
 				self.connectomes[key][name] = np.empty((other_area_size, 0))
+			#setting synapses between all assemblies
 			self.areas[key].area_beta[name] = self.areas[key].beta
 			self.areas[name].area_beta[key] = beta
 		self.connectomes[name] = new_connectomes
@@ -114,7 +119,7 @@ class Brain:
 
 		new_connectomes = {}
 		for key in self.areas:
-			if key == name:  # create explicitly
+			if key == name:  # create explicitly ADJACENCY MATRIX
 				new_connectomes[key] = np.random.binomial(1, self.p, size=(n,n)) * 1.0
 			if key != name:  
 				if self.areas[key].explicit:
@@ -143,14 +148,16 @@ class Brain:
 			for (stim, new_beta) in update_rules:
 				self.areas[area].stimulus_beta[stim] = new_beta
 
-	def project(self, stim_to_area, area_to_area, verbose=False):
+	def project(self, stim_to_area, area_to_area, printwinners = False,verbose=False):
 		# Validate stim_area, area_area well defined
 		# stim_to_area: {"stim1":["A"], "stim2":["C","A"]}
 		# area_to_area: {"A":["A","B"],"C":["C","A"]}
-
+        #b.project({"stimB":["B"]},{"B":["B","C"]}) = project area b into area c 
+		#b.project({"stimA":["A"]},{}) = create assembly in area A?
 		stim_in = defaultdict(lambda: [])
-		area_in = defaultdict(lambda: [])
 
+		area_in = defaultdict(lambda: [])
+	
 		for stim, areas in stim_to_area.items():
 			if stim not in self.stimuli:
 				raise IndexError(stim + " not in brain.stimuli")
@@ -171,10 +178,12 @@ class Brain:
 				area_in[to_area].append(from_area)
 
 		to_update = set().union(stim_in.keys(), area_in.keys())
+		
 
 		for area in to_update:
-			num_first_winners = self.project_into(self.areas[area], stim_in[area], area_in[area], verbose)
+			num_first_winners = self.project_into(self.areas[area], stim_in[area], area_in[area], verbose, printwinners)
 			self.areas[area].num_first_winners = num_first_winners
+			#print(num_first_winners)
 			if self.save_winners:
 				self.areas[area].saved_winners.append(self.areas[area].new_winners)
 
@@ -184,14 +193,14 @@ class Brain:
 			if self.save_size:
 				self.areas[area].saved_w.append(self.areas[area].w)
 
-	def project_into(self, area, from_stimuli, from_areas, verbose=False):
+	def project_into(self, area, from_stimuli, from_areas, verbose=False , printwinners=False):
 	# projecting everything in from stim_in[area] and area_in[area]
 	# calculate: inputs to self.connectomes[area] (previous winners)
 	# calculate: potential new winners, Binomial(sum of in sizes, k-top)
 	# k top of previous winners and potential new winners
 	# if new winners > 0, redo connectome and intra_connectomes 
 	# have to wait to replace new_winners
-		print("Projecting " + ",".join(from_stimuli) + " and " + ",".join(from_areas) + " into " + area.name)
+		#print("Projecting " + ",".join(from_stimuli) + " and " + ",".join(from_areas) + " into " + area.name)
 
 		# If projecting from area with no assembly, complain.
 		for from_area in from_areas:
@@ -202,16 +211,19 @@ class Brain:
 		prev_winner_inputs = [0.] * area.w
 		for stim in from_stimuli:
 			stim_inputs = self.stimuli_connectomes[stim][name]
+			#print(self.stimuli_connectomes[stim][name].shape)
 			for i in range(area.w):
 				prev_winner_inputs[i] += stim_inputs[i]
+			
 		for from_area in from_areas:
 			connectome = self.connectomes[from_area][name]
 			for w in self.areas[from_area].winners:
 				for i in range(area.w):
 					prev_winner_inputs[i] += connectome[w][i]
+					
 
 		if verbose:
-			print("prev_winner_inputs: ")
+			print("prev_winner_inputs their weights!: ")
 			print(prev_winner_inputs)
 
 		# simulate area.k potential new winners if the area is not explicit 
@@ -230,10 +242,10 @@ class Brain:
 				total_k += effective_k
 				input_sizes.append(effective_k)
 				num_inputs += 1
-
+			#total number of k from all sources
 			if verbose:
 				print("total_k = " + str(total_k) + " and input_sizes = " + str(input_sizes))
-
+            #WHAT IS THAT???
 			effective_n = area.n - area.w
 			# Threshold for inputs that are above (n-k)/n percentile.
 			# self.p can be changed to have a custom connectivity into thi sbrain area.
@@ -253,7 +265,8 @@ class Brain:
 			potential_new_winners = potential_new_winners.tolist()
 
 			if verbose:
-				print("potential_new_winners: ")
+				print("potential_new_winners i think just their weights: ")
+				#weights only not indices?
 				print(potential_new_winners)
 
 			# take max among prev_winner_inputs, potential_new_winners
@@ -269,13 +282,13 @@ class Brain:
 		if not area.explicit:
 			first_winner_inputs = []
 			for i in range(area.k):
-				if new_winner_indices[i] >= area.w:
+				if new_winner_indices[i] >= area.w: #if there are new ones
 					first_winner_inputs.append(potential_new_winners[new_winner_indices[i] - area.w])
 					new_winner_indices[i] = area.w+ num_first_winners
 					num_first_winners += 1
 		area.new_winners = new_winner_indices
-		area.new_w = area.w + num_first_winners
-
+		area.new_w = area.w + num_first_winners  #WE noqw simulate at lest the .w neurons of this area
+ 
 		# For experiments with a "fixed" assembly in some area.
 		if area.fixed_assembly:
 			area.new_winners = area.winners
@@ -286,14 +299,31 @@ class Brain:
 		# print name + " num_first_winners = " + str(num_first_winners)
 
 		if verbose:
-			print("new_winners: ")
+			print("new_winners here it's their index: ")
 			print(area.new_winners)
+			print(area.new_winners.size)
+		
+		if (len(from_stimuli) == 0 and len(from_areas)==1):
+			#print(name)
+			#print(self.areas[name].winners_dict)
+			self.areas[name].winners_dict[from_areas[0]] = new_winner_indices
+
+		if verbose:
+			print("num_first_winners (its the new ones): ") 
+			print(num_first_winners)
 
 		# for i in num_first_winners
 		# generate where input came from
+		if printwinners:
+			print("new_winners here it's their index: ")
+			print(set(area.new_winners) & set(area.winners))
+			
+
 			# 1) can sample input from array of size total_k, use ranges
 			# 2) can use stars/stripes method: if m total inputs, sample (m-1) out of total_k
 		first_winner_to_inputs = {}
+		#print('first_winner_inputs ' +str(first_winner_inputs))
+		#build neuron connections for only the new ones added!! if you have moire than one things projecting we build connections bt more than one neurons!(see total_k)
 		for i in range(num_first_winners):
 			input_indices = random.sample(range(0, total_k), int(first_winner_inputs[i]))
 			inputs = np.zeros(num_inputs)

@@ -1,0 +1,229 @@
+RUNNING find_firing_neurons_multiple_areas
+Projecting stimA and  into A
+Projecting stimC and  into C
+Projecting stimB and  into B
+Projecting stimD and  into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+({'stimA': ['A']}, {'A': ['A', 'E']})
+Projecting stimA and A into A
+Projecting  and A into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+({'stimA': ['A']}, {'A': ['A', 'E'], 'E': ['E']})
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimB and B into B
+Projecting  and B into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimC and C into C
+Projecting  and C into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting  and D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimB and B into B
+Projecting  and B,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimC and C into C
+Projecting  and C,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E

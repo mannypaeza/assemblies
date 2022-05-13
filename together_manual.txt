@@ -1,0 +1,462 @@
+RUNNING
+Projecting stimA and  into A
+Projecting stimC and  into C
+Projecting stimB and  into B
+Projecting stimD and  into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting  and A into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimA and A into A
+Projecting  and A,E into E
+Projecting stimB and B into B
+Projecting  and B into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimB and B into B
+Projecting  and B,E into E
+Projecting stimC and C into C
+Projecting  and C into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting stimC and C into C
+Projecting  and C,E into E
+Projecting  and D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting  and E,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,D into E
+Projecting stimD and D into D
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.00315457413249
+b-d overlap
+0.0
+c-d overlap
+0.0
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.00315457413249
+b-d overlap
+0.00630914826498
+c-d overlap
+0.00315457413249
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.00315457413249
+b-d overlap
+0.01261829653
+c-d overlap
+0.00630914826498
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.00630914826498
+b-d overlap
+0.01261829653
+c-d overlap
+0.01261829653
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.00946372239748
+b-d overlap
+0.018927444795
+c-d overlap
+0.018927444795
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.0283911671924
+b-d overlap
+0.0347003154574
+c-d overlap
+0.0441640378549
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.0410094637224
+b-d overlap
+0.0599369085174
+c-d overlap
+0.0567823343849
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0
+a-d overlap
+0.0788643533123
+b-d overlap
+0.0914826498423
+c-d overlap
+0.0977917981073
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.00315457413249
+a-d overlap
+0.135646687697
+b-d overlap
+0.135646687697
+c-d overlap
+0.1261829653
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.00946372239748
+a-d overlap
+0.192429022082
+b-d overlap
+0.173501577287
+c-d overlap
+0.18927444795
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0441640378549
+a-d overlap
+0.249211356467
+b-d overlap
+0.258675078864
+c-d overlap
+0.239747634069
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.0851735015773
+a-d overlap
+0.347003154574
+b-d overlap
+0.359621451104
+c-d overlap
+0.321766561514
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.179810725552
+a-d overlap
+0.451104100946
+b-d overlap
+0.444794952681
+c-d overlap
+0.441640378549
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.255520504732
+a-d overlap
+0.517350157729
+b-d overlap
+0.536277602524
+c-d overlap
+0.539432176656
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E,D into E
+Projecting stimD and D into D
+Projecting stimA and  into A
+Projecting  and A into E
+Projecting stimB and  into B
+Projecting  and B into E
+Projecting stimC and  into C
+Projecting  and C into E
+Projecting stimD and  into D
+Projecting  and D into E
+total overlap
+0.419558359621
+a-d overlap
+0.643533123028
+b-d overlap
+0.668769716088
+c-d overlap
+0.675078864353
+results
+{0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0, 7: 0.0, 8: 0.0031545741324921135, 9: 0.00946372239747634, 10: 0.04416403785488959, 11: 0.08517350157728706, 12: 0.17981072555205047, 13: 0.2555205047318612, 14: 0.4195583596214511}
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B into E
+Projecting stimA and A into A
+Projecting stimC and C into C
+Projecting stimB and B into B
+Projecting  and A,C,B,E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Projecting  and E into E
+Total overlap with d
+{0: 0.8170347003154574, 1: 0.8170347003154574, 2: 0.8170347003154574, 3: 0.8170347003154574, 4: 0.8170347003154574, 5: 0.8170347003154574, 6: 0.8170347003154574, 7: 0.8170347003154574, 8: 0.8170347003154574, 9: 0.8170347003154574}
