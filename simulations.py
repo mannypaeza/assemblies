@@ -333,6 +333,13 @@ def association_grand_sim_multiple_areas_separate(b,n,k,p,beta,min_iter,max_iter
 		for l in range(0,9):
 			b.project(stim_dict, area_dict)
 
+	# if n_firings_in_assoc > 0:
+	# 	# create stimulus
+	# 	stim_name = "stim"
+	# 	b.add_stimulus(stim_name,k)
+	# 	b.project({stim_name:[target_area]}, {})
+	# 	b.project({stim_name: [target_area]}, {target_area: [target_area]})
+
 	for i in range(n_firings_in_assoc):
 		b.project({}, {target_area: [target_area]})
 
